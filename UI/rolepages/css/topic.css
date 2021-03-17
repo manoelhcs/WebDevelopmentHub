@@ -1,0 +1,105 @@
+@media only screen and (min-width: 768px) {
+	.list-group {
+		width: 700px;
+		margin: 60px auto;
+	}
+
+	.list-group .left-box {
+		width: 500px;
+	}
+
+	.list-group .right-box {
+		width: 200px;
+	}
+
+	.ideas-box {
+		width: 590px;
+	}
+
+	.details-title {
+		width: 700px;
+	}
+
+	.container .login_box {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.panel-body .list-group {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.list-group h6 {
+	text-align: center;
+	font-weight: bold;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.list-group .right-box p {
+	text-align: center;
+}
+
+.list-group img {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+}
+
+.ideas-box span {
+	margin-left: 30px;
+	line-height: 40px;
+}
+
+.ideas-box+div p,
+.ideas-box+div p+div span {
+	line-height: 40px;
+	margin-bottom: 0px;
+}
+
+.mar-right {
+	margin-right: 10px;
+}
+
+.pointer {
+	margin-left: 20px;
+}
+
+.pointer span {
+	cursor: pointer;
+}
+
+nav ul {
+	margin: 0 auto;
+}
+
+.details-title {
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	border: 1px solid #eee;
+}
+
+.details-title p {
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+.details-box p:first-child {
+	line-height: 30px;
+}
+
+.details-box p {
+	margin-bottom: 0;
+	margin-left: 20px;
+}
+
+.report-title {
+	padding: 20px 30px;
+}
+
+#clause {
+	display: none;
+}

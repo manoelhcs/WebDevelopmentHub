@@ -1,0 +1,129 @@
+/* 常用公共类 */
+.fz-12 {
+	font-size: 12px;
+}
+
+.fz-14 {
+	font-size: 14px;
+}
+
+.fz-16 {
+	font-size: 16px;
+}
+
+.fz-18 {
+	font-size: 18px;
+}
+
+.fz-20 {
+	font-size: 20px;
+}
+
+.fz-weight {
+	font-weight: bold;
+}
+
+.color-000 {
+	color: #000;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+}
+
+.margin0 {
+	margin: 0 auto;
+}
+
+.none {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
+.kill-margin {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.kill-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.textRight {
+	text-align: right;
+}
+
+/* 媒体查询，屏幕宽度大于768px使用以下属性 */
+@media only screen and (min-width: 768px) {
+	.container header .right .btn {
+		padding: 6px 30px;
+	}
+
+	.container .login_box {
+		margin-top: 80px;
+		margin-bottom: 40px;
+	}
+}
+
+.container {
+	border: 1px solid #eee;
+	padding: 0 !important;
+}
+
+/* 顶部图片大小css,可调整宽高 */
+.container header img {
+	width: 120px;
+	height: 80px;
+	margin-right: 20px;
+}
+
+
+.container .nav {
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.container header .right {
+	margin-right: 30px;
+}
+
+.container .login_box .panel-heading {
+	text-align: center;
+	font-weight: bold;
+}
+
+.container footer {
+	padding: 40px;
+	border-top: 1px solid #eee;
+}
+
+.container footer h4 {
+	margin-bottom: 20px;
+}
