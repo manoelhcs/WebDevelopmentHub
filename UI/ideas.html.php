@@ -62,20 +62,20 @@ foreach($result as $row)
 			<header style="background-color: white">
 				<div class="flex-between">
 					<img src="./img/logo.PNG" style="width: 170px; height: 70px;">
-					<h3 class="Topicfont">Idea Forum</h3>
+					<h3 class="Topicfont">Comments</h3>
 					<div class="right flex-center">
 						<a class="btn btn-primary btn-sm" href="login.html.php" role="button" style="background-color: #606EB2;">Login</a>
 						<a class="btn btn-primary btn-sm" href="logout.php" role="button" style="background-color: #606EB2;">Log out</a>
-						<a class="btn btn-primary btn-sm" href="register.html" role="button" style="background-color: #606EB2;">register</a>
+						<a class="btn btn-primary btn-sm" href="register.html.php" role="button" style="background-color: #606EB2;">register</a>
 					</div>
 				</div>
 			</header>
 			<!-- Navigation bar nav bootstrap component -->
 			<ul class="nav nav-pills nav-justified">
 				<!-- Click the jump page, add the active attribute to display the background color -->
-				<li role="presentation" class="active"><a href="#" class=" color-000">Personal page</a></li>
+				<li role="presentation"><a href="personalInfo.html#" class=" color-000">Personal page</a></li>
 				<li role="presentation"><a href="Mainpage.html" class=" color-000">Mainpage</a></li>
-				<li role="presentation"><a href="#" class=" color-000">Reset Password</a></li>
+                <li role="presentation" class="active"><a href="#" class=" color-000">Ideas</a></li>
 			</ul>
 			<?php foreach ($ideas as $idea): ?>
 			<!-- a tag list group -->
@@ -88,7 +88,7 @@ foreach($result as $row)
 								<span>Department：<?php echo $idea['department']; ?></span>
 								<span>Deadline：<?php echo $idea['ideatime']; ?></span>
 							</div>
-							<button class="btn btn-primary btn-sm" type="button"  style="background-color: #606EB2;">Post a topic</button>
+							<button class="btn btn-primary btn-sm" type="button"  style="background-color: #606EB2;">Post a comment</button>
 						</div>
 					</div>
 				</a>

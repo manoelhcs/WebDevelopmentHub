@@ -74,7 +74,7 @@ foreach($result as $row)
 					<div class="right flex-center">
 						<a class="btn btn-primary btn-sm" href="login.html.php" role="button" style="background-color: #606EB2;">Login</a>
 						<a class="btn btn-primary btn-sm" href="logout.php" role="button" style="background-color: #606EB2;">Log out</a>
-						<a class="btn btn-primary btn-sm" href="register.html" role="button" style="background-color: #606EB2;">register</a>
+						<a class="btn btn-primary btn-sm" href="register.html.php" role="button" style="background-color: #606EB2;">register</a>
 					</div>
 				</div>
 			</header>

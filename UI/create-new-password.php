@@ -1,5 +1,5 @@
 <?php
- require "../includes/helpers.inc.php";
+
 ?>
 <style>
          body{
@@ -29,7 +29,6 @@ a:hover, a:active {
 </head>
 <body>
         <?php
-        $validator = $_GET["validator"];
         
         if(empty($validator)) {
             echo "couldnt validate your request";

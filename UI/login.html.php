@@ -42,7 +42,6 @@ if(isset($_POST['login'])){
     elseif ($usertype = "LAW") {
     $usertype="5";
 }*/
-
     $sql = "SELECT * FROM employee WHERE Employee_Email='".$username."' AND Employee_Password='".$password."' AND Employee_Department='".$usertype."'";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
@@ -52,7 +51,14 @@ if(isset($_POST['login'])){
     $_SESSION['role'] = $usertype;
 
     session_write_close();
-    
+
+    if ($result->num_rows > 0) {
+        echo "here";
+        while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["Employee_name"]. "department: " . $row["Employee_Department"]. " - Name: " . $row["Employee_Gender"]. " " . $row["Employee_Email"]. "<br>";
+        }
+    }
+
     if($result->num_rows==1 && $_SESSION['role']=="1"){
         header("location:/pages/comp.html.php");
     }
@@ -81,18 +87,18 @@ if(isset($_POST['login'])){
 					<img src="./img/logo.PNG" style="width: 170px; height: 70px;">
 					<h3 class="Topicfont">Idea Forum</h3>
 					<div class="right flex-center">
-						<a class="btn btn-primary btn-sm" href="login.html.php" role="button" style="background-color: #606EB2;">Login</a>
-						<a class="btn btn-primary btn-sm" href="logout.php" role="button" style="background-color: #606EB2;">Log out</a>
-						<a class="btn btn-primary btn-sm" href="register.html" role="button" style="background-color: #606EB2;">register</a>
+<!--						<a class="btn btn-primary btn-sm" href="login.html.php" role="button" style="background-color: #606EB2;">Login</a>-->
+<!--						<a class="btn btn-primary btn-sm" href="logout.php" role="button" style="background-color: #606EB2;">Log out</a>-->
+						<a class="btn btn-primary btn-sm" href="register.html.php" role="button" style="background-color: #606EB2;">register</a>
 					</div>
 				</div>
 			</header>
 			<!-- Navigation bar nav bootstrap component -->
 			<ul class="nav nav-pills nav-justified">
 				<!-- Click the jump page, add the active attribute to display the background color -->
-				<li role="presentation" class="active"><a href="#" class=" color-000">Personal page</a></li>
+				<!--<li role="presentation"><a href="#" class=" color-000">Personal page</a></li>
 				<li role="presentation"><a href="#" class=" color-000">Mainpage</a></li>
-				<li role="presentation"><a href="#" class=" color-000">Reset Password</a></li>
+				<li role="presentation"><a href="#" class=" color-000">Reset Password</a></li>-->
 			</ul>
 			<div class="row flex-between kill-margin">
 				<div class="login_box col-lg-6 col-md-8 col-sm-10 col-xs-12 kill-padding">

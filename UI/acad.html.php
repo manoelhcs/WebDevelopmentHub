@@ -2,7 +2,7 @@
 session_start();
 
   if( $_SESSION['role']!="2"){
-        header("location:ideas.html.php");
+        header("location:Mainpage.php");
     }
 ?>
 <title>ACAD Ideas</title>
@@ -74,7 +74,7 @@ foreach($result as $row)
 					<div class="right flex-center">
 						<a class="btn btn-primary btn-sm" href="login.html.php" role="button" style="background-color: #606EB2;">Login</a>
 						<a class="btn btn-primary btn-sm" href="logout.php" role="button" style="background-color: #606EB2;">Log out</a>
-						<a class="btn btn-primary btn-sm" href="register.html" role="button" style="background-color: #606EB2;">register</a>
+						<a class="btn btn-primary btn-sm" href="register.html.php" role="button" style="background-color: #606EB2;">register</a>
 					</div>
 				</div>
 			</header>
@@ -83,7 +83,7 @@ foreach($result as $row)
 				<!-- Click the jump page, add the active attribute to display the background color -->
 				<li role="presentation" class="active"><a href="#" class=" color-000">Personal page</a></li>
 				<li role="presentation"><a href="Mainpage.html" class=" color-000">Mainpage</a></li>
-				<li role="presentation"><a href="#" class=" color-000">Reset Password</a></li>
+				<li role="presentation"><a href="reset-passord.html" class=" color-000">Reset Password</a></li>
 			</ul>
 			<?php foreach ($ideas as $idea): ?>
 			<!-- a tag list group -->
