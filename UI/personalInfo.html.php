@@ -1,23 +1,30 @@
 <?php 
 
 session_start();
-    
-/*    if(!isset($_SESSION['username']) || $_SESSION['role']!="MANAGER"){
-        header("location:accessdenied.html.php");
-    }*/
 
 $conn = new mysqli("178.79.153.56","compteam_manoel","comp1640_pass","compteam_COMP1640_database");
 
-$msg="";
+$msg = '';
 
-$username = "";
+$username = $_SESSION['username'];
 $name = "";
 $department = "";
 
-$sql = "SELECT `Employee_name`,`Employee_Email`, `Employee_Department` FROM `employee` WHERE ";
+$sql = "SELECT Employee_name,Employee_Email,Employee_Department FROM employee WHERE Employee_Email = '".$username."'";
 
 $result = mysqli_query($conn,$sql);
+$resultcheck = mysqli_num_rows($result);
 
+foreach($result as $row)
+{
+    $information [] = array(
+        'name' => $row['Employee_name'],
+        'email' => $row['Employee_Email'],
+        'department' => $row['Employee_Department']
+    );
+}
+
+session_write_close();
 
 ?>
 <!DOCTYPE html>
@@ -54,15 +61,15 @@ $result = mysqli_query($conn,$sql);
 			<ul class="nav nav-pills nav-justified">
 				<!-- Click the jump page, add the active attribute to display the background color -->
 				<li role="presentation" class="active"><a href="#" class=" color-000">Personal page</a></li>
-				<li role="presentation"><a href="Mainpage.html" class=" color-000">Mainpage</a></li>
+				<li role="presentation"><a href="Mainpage.html.php" class=" color-000">Mainpage</a></li>
 				<li role="presentation"><a href="ideas.html.php" class=" color-000">Ideas</a></li>
 			</ul>
 			<div class="info-head flex">
 				<img src="img/avatar.jpg">
 				<div>
-					<p>User：xxx type="text" value="<?PHP echo $name; ?>" </p>
-					<p>Name：xxx</p>
-					<p>Department：xxx</p>
+					<p>Name：<?php echo $information[0]['name']; ?></p>
+					<p>Email：<?php echo $information[0]['email']; ?></p>
+					<p>Department：<?php echo $information[0]['department']; ?></p>
 				</div>
 			</div>
 			<div class="info-btn flex-between">

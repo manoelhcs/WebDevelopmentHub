@@ -5,10 +5,10 @@ session_start();
 
 $conn = new mysqli("178.79.153.56","compteam_manoel","comp1640_pass","compteam_COMP1640_database");
 
-$sql = "SELECT employee.Employee_Name, topic.Topic_Name , idea.Idea_content, idea.Idea_topic, idea.Idea_id, idea.Idea_Title, idea.Idea_ThumbsUP_Number, idea.Idea_ThumbsDOWN_Number, idea.Idea_Time, department.Department_Name,employee.BLOCK
+$sql = "SELECT employee.Employee_Name, topic.Topic_Name , idea.Idea_content, idea.Idea_topic, idea.Idea_id, idea.Idea_Title , idea.Idea_ThumbsUP_Number, idea.Idea_ThumbsDOWN_Number, idea.Idea_Time, department.Department_Name,employee.BLOCK
 FROM (((idea
 INNER JOIN employee ON Idea_Employee = employee.Employee_Id) 
-INNER JOIN department ON Idea_Department = department.Department_Id) 
+INNER JOIN department ON Idea_Department = department.Department_Id ) 
 INNER JOIN topic ON Idea_Topic = Topic_Id)
 ORDER BY idea.Idea_id";
 $result = mysqli_query($conn,$sql);
@@ -19,7 +19,7 @@ foreach($result as $row)
     $commentsNumber = 0;
 
     $ideaID = $row['Idea_id'];
-
+    /*
         $sql2 = "SELECT COUNT(Comment_Idea) as comments FROM comment INNER JOIN idea ON idea.Idea_Id = comment.Comment_Idea WHERE idea.Idea_Id = '".$ideaID."' GROUP BY Comment_Idea";
         $result2 = mysqli_query($conn,$sql2);
         $resultrows = mysqli_num_rows($result2);
@@ -30,7 +30,7 @@ foreach($result as $row)
             {
                 $commentsNumber = $row2['comments'];
             }
-        }
+        }*/
 
     $ideas [] = array(
         'ideatopic' => $row['Topic_Name'],
