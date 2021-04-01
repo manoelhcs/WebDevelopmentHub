@@ -27,43 +27,33 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
     $password = md5($password);
     $usertype = $_POST['userType'];
-/*if ($usertype = "COMP") {
-    $usertype="1";
-} 
-    elseif ($usertype = "ACAD") {
-    $usertype="2";
-}
-    elseif ($usertype = "ACCO") {
-    $usertype="3";
-} 
-    elseif ($usertype = "ENVT") {
-    $usertype="4";
-} 
-    elseif ($usertype = "LAW") {
-    $usertype="5";
-}*/
+
     $sql = "SELECT * FROM employee WHERE Employee_Email='".$username."' AND Employee_Password='".$password."' AND Employee_Department='".$usertype."'";
     $result = mysqli_query($conn,$sql);
     $resultcheck = mysqli_num_rows($result);
 
     session_regenerate_id();
-    $_SESSION['username'] = $emp;
-    $_SESSION['role'] = $usertype;
+    //$_SESSION['username'] = $emp;
 
-    session_write_close();
 
     if ($result->num_rows > 0) {
-        echo "here";
+
+        $_SESSION['username'] = $username;
+        $_SESSION['role'] = $usertype;
+
         while($row = $result->fetch_assoc()) {
             echo "id: " . $row["Employee_name"]. "department: " . $row["Employee_Department"]. " - Name: " . $row["Employee_Gender"]. " " . $row["Employee_Email"]. "<br>";
         }
     }
 
+    session_write_close();
+
     if($result->num_rows==1 && $_SESSION['role']=="1"){
         header("location:/pages/comp.html.php");
     }
     else if($result->num_rows==1 && $_SESSION['role']=="2"){
-        header("location:/pages/acad.html.php");
+        /*header("location:/pages/acad.html.php");*/
+        header("location:/pages/Mainpage.html.php");
     }
     else if($result->num_rows==1 && $_SESSION['role']=="3"){
         header("location:/pages/acco.html.php");

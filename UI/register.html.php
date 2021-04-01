@@ -40,14 +40,8 @@ if(isset($_POST['register'])){
 
     if($depOption == "COMP"){
         $depOption = 1;
-    }else if($depOption == "ACAD"){
+    }else if($depOption == "STAFF"){
         $depOption = 2;
-    }else if($depOption == "ACCO"){
-        $depOption = 3;
-    }else if($depOption == "ENVT"){
-        $depOption = 4;
-    }else if($depOption == "LAW"){
-        $depOption = 5;
     }
 
     $sql = "INSERT INTO employee (Employee_name, Employee_Gender, Employee_Password, Employee_Email, Employee_Department, Employee_Identity, BLOCK)
@@ -83,7 +77,7 @@ if(isset($_POST['register'])){
                             <form method="post">
 							<form class="form">
                                 <div class="form-group">
-                                    <label class="font-weight">Name</label>
+                                    <label class="font-weight">Full Name</label>
                                     <input type="text" name="name" class="form-control" placeholder="name"required>
                                 </div>
 								<div class="form-group">
@@ -99,7 +93,7 @@ if(isset($_POST['register'])){
 									<input name="confirm_password" class="form-control" type="password" placeholder="Password"required>
 								</div>
 								<div class="form-group">
-									<label class="font-weight">Sex</label>
+									<label class="font-weight">Gender</label>
 									<div class="radio">
 										<label class="radio-inline">
 											<input type="radio" name="sex" value="1"> Male
@@ -107,24 +101,16 @@ if(isset($_POST['register'])){
 										<label class="radio-inline">
 											<input type="radio" name="sex" value="2"> Female
 										</label>
-										<label class="radio-inline">
-											<input type="radio" name="sex" value="3"> X
-										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="font-weight">Department</label>
 									<select class="form-control" name="depOption">
 										<option>COMP</option>
-										<option>ACAD</option>
-										<option>ACCO</option>
-										<option>ENVT</option>
-										<option>LAW</option>
+										<option>STAFF</option>
 									</select>
 								</div>
 								<div class="form-group">
-									<label class="font-weight">Value</label>
-									<input class="form-control" value="1" disabled>
 								</div>
                                     <button name="register" class="btn btn-primary btn-lg btn-block" type="submit"  style="background-color: #606EB2;">Register</button>
 							</form>
@@ -138,6 +124,7 @@ if(isset($_POST['register'])){
 				<h5 class="textCenter">Contant:XXX</h5>
 			</footer>
 		</div>
+        <h5 class="text-danger text-center"><?= $msg; ?></h5>
 
 
 
